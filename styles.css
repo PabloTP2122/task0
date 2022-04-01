@@ -14,11 +14,13 @@ html {
 .light-mode {
     --brand-color: #0984E3;
     --navcolor: #E2E7ED;
-    --background-color: #E5E5E5;
+    --background-color: #FFFFFF;
     --header-color: #FFFFFF;
     --rectangle-color: #E2E7ED;
     --font-family: "Lato";
     --font-color: #3f3b3b;
+    --font-tabs-color: #728188;
+    --header-border-color: #E2E7ED;
 }
 
 .dark-mode {
@@ -29,6 +31,8 @@ html {
     --rectangle-color: #E2E7ED;
     --font-family: "Lato";
     --font-color: #E2E7ED;
+    --font-tabs-color: #d1d7da;
+    --header-border-color: #3f3b3b;
 }
 
 body {
@@ -40,6 +44,7 @@ body {
 
 header {
     background-color: var(--header-color);
+    border: 1px solid var(--header-border-color);
 }
 
 .header--container {
@@ -65,11 +70,11 @@ picture img {
     width: 100%;
 }
 
-.navbar-left {
+.header-left {
     grid-area: logo;
 }
 
-.navbar-right {
+.header-right {
     font-family: var(--font-family);
     font-size: 1.6rem;
     color: var(--font-color);
@@ -79,20 +84,20 @@ picture img {
 
 /* ------ Switch ------ */
 
-.switch {
+.header-switch {
     width: 60px;
     height: 34px;
     grid-area: switch;
 }
 
-.switch {
+.header-switch {
     position: relative;
     display: inline-block;
     width: 60px;
     height: 34px;
 }
 
-.switch input {
+.header-switch input {
     opacity: 0;
     width: 0;
     height: 0;
@@ -133,7 +138,7 @@ input:checked+.slider {
 }
 
 input:focus+.slider {
-    box-shadow: 0 0 1px #3f3b3b;
+    box-shadow: 0 0 1px #c0c0c0;
 }
 
 input:checked+.slider:before {
@@ -154,11 +159,59 @@ input:checked+.slider:before {
 
 .slider.round:before {
     border-radius: 50%;
+    border-color: #d1d7da;
 }
 
 
-/*------ Header ------ */
+/*------ Tabs ------ */
 
-p {
-    font-size: 16rem;
+nav {
+    display: flex;
+}
+
+.nav--tabs ul {
+    list-style: none;
+    padding: 0px;
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    border: 5px solid #e1bee7;
+    background-color: var(--background-color);
+}
+
+.nav--tabs {
+    display: grid;
+    max-width: 900px;
+    min-width: 300px;
+    margin: 0px auto;
+}
+
+.nav--tabs ul li a {
+    text-decoration: none;
+    font-family: var(--font-family);
+    color: var(--font-tabs-color);
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-style: bold;
+    padding: 8px;
+}
+
+.nav--tabs ul li a:hover {
+    text-decoration: none;
+    font-family: var(--font-family);
+    color: var(--brand-color);
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-style: bold;
+    padding: 8px;
+}
+
+picture img {
+    width: 60px;
+}
+
+main p {
+    font-family: var(--font-family);
+    font-size: 1.6rem;
+    color: var(--font-color);
 }
