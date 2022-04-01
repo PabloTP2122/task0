@@ -1,0 +1,164 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+
+/*------ Themes light/dark modes ------ */
+
+.light-mode {
+    --brand-color: #0984E3;
+    --navcolor: #E2E7ED;
+    --background-color: #E5E5E5;
+    --header-color: #FFFFFF;
+    --rectangle-color: #E2E7ED;
+    --font-family: "Lato";
+    --font-color: #3f3b3b;
+}
+
+.dark-mode {
+    --brand-color: #0984E3;
+    --navcolor: #E2E7ED;
+    --background-color: #616161;
+    --header-color: #3f3b3b;
+    --rectangle-color: #E2E7ED;
+    --font-family: "Lato";
+    --font-color: #E2E7ED;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+
+/* ------ Header ------ */
+
+header {
+    background-color: var(--header-color);
+}
+
+.header--container {
+    /* border: 5px solid #e1bee7; */
+    background-color: var(--header-color);
+    display: grid;
+    /* grid-template-columns: 200px 300px 100px 50px; */
+    grid-template-columns: 1fr 3fr 1fr 0.5fr;
+    grid-template-rows: 80px;
+    grid-template-areas: "logo blank activity switch";
+    max-width: 750px;
+    place-content: center;
+    place-items: center;
+    max-width: 900px;
+    min-width: 300px;
+    margin: 0px auto;
+    padding: 10px;
+    gap: 5px;
+}
+
+picture img {
+    min-width: 100px;
+    width: 100%;
+}
+
+.navbar-left {
+    grid-area: logo;
+}
+
+.navbar-right {
+    font-family: var(--font-family);
+    font-size: 1.6rem;
+    color: var(--font-color);
+    grid-area: activity;
+}
+
+
+/* ------ Switch ------ */
+
+.switch {
+    width: 60px;
+    height: 34px;
+    grid-area: switch;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+
+/* ------ The slider ------ */
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--brand-color);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--brand-color);
+    background-image: url(./assets/light-mode-icon.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #3f3b3b;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #3f3b3b;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+    background: url(./assets/dark-mode-icon.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+/* Rounded slider */
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+/*------ Header ------ */
+
+p {
+    font-size: 16rem;
+}
