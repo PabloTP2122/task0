@@ -12,30 +12,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <!-- BEM metodology -->
-<script>
-    // function to set a given theme/color-scheme
-    function setTheme(themeName) {
-        localStorage.setItem('theme', themeName);
-        document.documentElement.className = themeName;
-    }
-
-    // function to toggle between light and dark theme
-    function toggleThemeMode() {
-        if (localStorage.getItem('theme') === 'light-mode') {
-            setTheme('dark-mode');
-        } else {
-            setTheme('light-mode');
-        }
-    }
-
-    // Immediately invoked function to set the theme on initial load
-    (function() {
-        if (localStorage.getItem('theme') === 'light-mode') {
-            setTheme('light-mode');
-        } else {
-            setTheme('dark-mode');
-        }
-    })();
+<script src="/main.js">
 </script>
 
 <body>
@@ -54,53 +31,63 @@
         </div>
     </header>
     <main>
-        <nav class="nav--tabs">
+        <!-- Tabs -->
+        <nav class="nav--tabs" id="navigation">
             <ul>
                 <li>
+                    <!-- using html data -->
+                    <a data-target="#course">Course</a>
                     <div class="icon--course">
                         <img src="/assets/course-tab-icon.svg" />
                     </div>
                     <span class="icon--course"></span>
-                    <a href="/">Course</a>
                 </li>
                 <li>
                     <div class="icon--course">
                         <img src="/assets/materials-tab-icon.svg" />
                     </div>
                     <span class="icon--materials"></span>
-                    <a href="/">Materials</a>
+                    <a data-target="#materials">Materials</a>
                 </li>
                 <li>
                     <div class="icon--course">
                         <img src="/assets/activity-tab-icon.svg" />
                     </div>
                     <span class="icon--activity"></span>
-                    <a href="/">Activity</a>
+                    <a data-target="#activity">Activity</a>
                 </li>
             </ul>
-            <span class="indicator" id="indicator"></span>
+            <span class="indicator-rail" id="indicator-rail"><span class="indicator" id="indicator"></span></span>
+
+
         </nav>
-        <section class="sections main--course" id="1">
+        <!-- class="sections main--course" -->
+        <section class="sections main--course active" data-content id="course">
             <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
                 survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
                 desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
             </p>
         </section>
-        <!-- <section class="sections main--materials" id="2">
+        <section class="sections main--materials" data-content id="materials">
             <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
                 survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
                 desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
             </p>
         </section>
-        <section class="sections main--activity" id="3">
-            <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
-                desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            </p>
-        </section> -->
+        <section class="sections main--activity" data-content id="activity">
+            <button class="previous--button"><a href="/"></a></button>
+            <h4>September 2, 2021</h4>
+            <div class="cards">
+                <div class="card-1"></div>
+                <div class="card-2"></div>
+                <div class="card-3"></div>
+                <div class="card-4"></div>
+                <div class="card-5"></div>
+            </div>
+            <button class="next--button"><a href="/"></a></button>
+        </section>
     </main>
 </body>
 

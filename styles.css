@@ -1,3 +1,5 @@
+/* General styles */
+
 * {
     margin: 0px;
     padding: 0px;
@@ -8,8 +10,12 @@ html {
     font-size: 62.5%;
 }
 
+body {
+    background-color: var(--background-color);
+}
 
-/*------ Themes light/dark modes ------ */
+
+/*------ Themes light/dark modes classes------ */
 
 .light-mode {
     --brand-color: #0984E3;
@@ -35,10 +41,6 @@ html {
     --header-border-color: #3f3b3b;
 }
 
-body {
-    background-color: var(--background-color);
-}
-
 
 /* ------ Header ------ */
 
@@ -55,7 +57,6 @@ header {
     grid-template-columns: 1fr 3fr 1fr 0.5fr;
     grid-template-rows: 80px;
     grid-template-areas: "logo blank activity switch";
-    max-width: 750px;
     place-content: center;
     place-items: center;
     max-width: 900px;
@@ -63,6 +64,7 @@ header {
     margin: 0px auto;
     padding: 10px;
     gap: 5px;
+    overflow: hidden;
 }
 
 picture img {
@@ -167,11 +169,14 @@ input:checked+.slider:before {
 
 nav {
     display: flex;
+    max-width: 900px;
+    min-width: 300px;
+    margin: 50px auto;
 }
 
 .nav--tabs ul {
     list-style: none;
-    padding: 0px;
+    padding: 15px;
     margin-top: 60px;
     display: grid;
     grid-template-columns: repeat(3, min-content);
@@ -221,8 +226,9 @@ nav {
 }
 
 .icon--course img {
-    width: 30px;
+    width: 22px;
     grid-area: image;
+    fill: #0984E3;
 }
 
 
@@ -235,8 +241,48 @@ nav {
     margin: 50px auto;
 }
 
+nav .indicator-rail {
+    width: 100%;
+    height: 6px;
+    max-width: 900px;
+    min-width: 300px;
+    background-color: #E2E7ED;
+    position: relative;
+    bottom: 0;
+    float: left;
+}
+
+.indicator {
+    width: 0px;
+    height: 6px;
+    background-color: #0984E3;
+    position: relative;
+    bottom: 0;
+    display: block;
+    z-index: 100;
+    transition: .3s ease-out all;
+    /* transform: translate(100px); */
+}
+
 main p {
     font-family: var(--font-family);
     font-size: 1.6rem;
     color: var(--font-color);
+    padding: 15px;
 }
+
+
+/* ------ Section-content ------ */
+
+[data-content] {
+    display: none;
+}
+
+.active[data-content] {
+    display: block;
+}
+
+
+/* ------ MediaQueries ------ */
+
+@media screen and (max-width: 375px) {}
