@@ -173,9 +173,11 @@ nav {
     list-style: none;
     padding: 0px;
     margin-top: 60px;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, min-content);
     align-items: center;
-    border: 5px solid #e1bee7;
+    gap: 40px;
+    /* border: 5px solid #e1bee7; */
     background-color: var(--background-color);
 }
 
@@ -206,8 +208,31 @@ nav {
     padding: 8px;
 }
 
-picture img {
-    width: 60px;
+.nav--tabs ul li {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-areas: "image text-tab";
+    place-content: center;
+}
+
+.nav--tabs ul li a {
+    grid-area: text-tab;
+    place-self: center;
+}
+
+.icon--course img {
+    width: 30px;
+    grid-area: image;
+}
+
+
+/*------ Sections ------ */
+
+.sections {
+    display: grid;
+    max-width: 900px;
+    min-width: 300px;
+    margin: 50px auto;
 }
 
 main p {
