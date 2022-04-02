@@ -47,6 +47,7 @@ body {
 header {
     background-color: var(--header-color);
     border: 1px solid var(--header-border-color);
+    width: 100%;
 }
 
 .header--container {
@@ -64,7 +65,7 @@ header {
     margin: 0px auto;
     padding: 10px;
     gap: 5px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 picture img {
@@ -118,6 +119,7 @@ picture img {
     background-color: var(--brand-color);
     -webkit-transition: .4s;
     transition: .4s;
+    box-shadow: 0 0 1px var(--font-color);
 }
 
 .slider:before {
@@ -136,11 +138,11 @@ picture img {
 }
 
 input:checked+.slider {
-    background-color: #3f3b3b;
+    background-color: var(--header-color);
 }
 
 input:focus+.slider {
-    box-shadow: 0 0 1px #c0c0c0;
+    box-shadow: 0 0 1px var(--font-color);
 }
 
 input:checked+.slider:before {
@@ -161,18 +163,19 @@ input:checked+.slider:before {
 
 .slider.round:before {
     border-radius: 50%;
-    border-color: #d1d7da;
+    box-shadow: 0 0 1px var(--font-color);
 }
 
 
 /*------ Tabs ------ */
 
-nav {
+
+/* nav {
     display: flex;
     max-width: 900px;
     min-width: 300px;
     margin: 50px auto;
-}
+} */
 
 .nav--tabs ul {
     list-style: none;
@@ -181,7 +184,7 @@ nav {
     display: grid;
     grid-template-columns: repeat(3, min-content);
     align-items: center;
-    gap: 40px;
+    gap: 60px;
     /* border: 5px solid #e1bee7; */
     background-color: var(--background-color);
 }
@@ -203,7 +206,29 @@ nav {
     padding: 8px;
 }
 
+
+/* Tab icons position */
+
+.nav--tabs ul li a {
+    display: grid;
+    grid-template-rows: min-content;
+    grid-template-areas: "image text-tab";
+    place-content: center;
+    text-decoration: none;
+    font-family: var(--font-family);
+    color: var(--font-tabs-color);
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-style: bold;
+    padding: 8px;
+    gap: 10px;
+}
+
 .nav--tabs ul li a:hover {
+    display: grid;
+    grid-template-rows: min-content;
+    grid-template-areas: "image text-tab";
+    place-content: center;
     text-decoration: none;
     font-family: var(--font-family);
     color: var(--brand-color);
@@ -211,24 +236,58 @@ nav {
     font-weight: 700;
     font-style: bold;
     padding: 8px;
+    gap: 10px;
 }
 
-.nav--tabs ul li {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-areas: "image text-tab";
-    place-content: center;
-}
-
-.nav--tabs ul li a {
+.nav--tabs ul li a span {
     grid-area: text-tab;
     place-self: center;
 }
 
-.icon--course img {
-    width: 22px;
+.icon i {
     grid-area: image;
-    fill: #0984E3;
+}
+
+
+/* Icon colors */
+
+.icon:hover>i {
+    background-color: var(--brand-color);
+    display: inline-block;
+}
+
+.icon--course {
+    width: 22px;
+    height: 28px;
+    display: inline-block;
+    -webkit-mask: url(./assets/course-tab-icon.svg) no-repeat 50% 50%;
+    mask: url(./assets/course-tab-icon.svg) no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+}
+
+.icon--materials {
+    width: 22px;
+    height: 28px;
+    display: inline-block;
+    -webkit-mask: url(./assets/materials-tab-icon.svg) no-repeat 50% 50%;
+    mask: url(./assets/materials-tab-icon.svg) no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+}
+
+.icon--activity {
+    width: 22px;
+    height: 28px;
+    display: inline-block;
+    -webkit-mask: url(./assets/activity-tab-icon.svg) no-repeat 50% 50%;
+    mask: url(./assets/activity-tab-icon.svg) no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+}
+
+.icon-color {
+    background-color: var(--font-tabs-color);
 }
 
 
@@ -250,6 +309,7 @@ nav .indicator-rail {
     position: relative;
     bottom: 0;
     float: left;
+    overflow: hidden;
 }
 
 .indicator {
@@ -272,17 +332,158 @@ main p {
 }
 
 
-/* ------ Section-content ------ */
+/* ------ Sections-content ------ */
 
 [data-content] {
     display: none;
 }
 
 .active[data-content] {
-    display: block;
+    display: grid;
+}
+
+
+/* ------ Section-activity ------ */
+
+
+/* .main--activity {
+    display: grid;
+    grid-template-rows: 1fr 4fr 1fr;
+} */
+
+.sections .pages {
+    display: none;
+}
+
+.pageActive {
+    display: grid;
+}
+
+.previous--button {
+    width: 189px;
+    height: 34px;
+    background-color: var(--brand-color);
+    border: 1px solid var(--brand-color);
+    border-radius: 6px;
+    margin: 5px;
+}
+
+.previous--button a {
+    text-decoration: none;
+    color: white;
+}
+
+.next--button {
+    width: 189px;
+    height: 34px;
+    background-color: var(--brand-color);
+    border: 1px solid var(--brand-color);
+    border-radius: 6px;
+    margin-top: 20px;
+    margin: 5px;
+}
+
+.next--button a {
+    text-decoration: none;
+    color: white;
+}
+
+h4 {
+    font-family: var(--font-family);
+    font-size: 1.6rem;
+    font-weight: 400;
+    padding: 20px;
+    color: var(--font-color);
+}
+
+.cards {
+    display: grid;
+    gap: 10px;
+    padding: 5px;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 1fr 2fr 3fr 1fr 2fr 3fr 1fr 2fr 3fr;
+    width: 100%;
+    height: 54px;
+    border: 1px solid var(--header-border-color);
+    border-radius: 6px;
+}
+
+.card-1 {
+    width: 100%;
+    height: 54px;
+    border-radius: 6px;
+}
+
+.card-2 {
+    width: 100%;
+    height: 54px;
+}
+
+.card-3 {
+    width: 100%;
+    height: 54px;
+}
+
+.card-4 {
+    width: 100%;
+    height: 54px;
+}
+
+.card-5 {
+    width: 100%;
+    height: 54px;
 }
 
 
 /* ------ MediaQueries ------ */
 
-@media screen and (max-width: 375px) {}
+
+/* min display*/
+
+
+/* From 320 - 375 */
+
+@media screen and (max-width: 475px) {
+    .nav--tabs ul {
+        list-style: none;
+        padding: 15px;
+        margin-top: 60px;
+        display: grid;
+        grid-template-columns: repeat(3, min-content);
+        align-items: center;
+        gap: 25px;
+        /* border: 5px solid #e1bee7; */
+        background-color: var(--background-color);
+    }
+    .nav--tabs ul li a {
+        display: grid;
+        grid-template-rows: min-content;
+        grid-template-areas: "image text-tab";
+        place-content: center;
+        text-decoration: none;
+        font-family: var(--font-family);
+        color: var(--font-tabs-color);
+        font-size: 0.9rem;
+        font-weight: 700;
+        font-style: bold;
+        padding: 8px;
+        gap: 10px;
+    }
+    .nav--tabs ul li a:hover {
+        display: grid;
+        grid-template-rows: min-content;
+        grid-template-areas: "image text-tab";
+        place-content: center;
+        text-decoration: none;
+        font-family: var(--font-family);
+        color: var(--brand-color);
+        font-size: 0.9rem;
+        font-weight: 700;
+        font-style: bold;
+        padding: 8px;
+        gap: 10px;
+    }
+}
