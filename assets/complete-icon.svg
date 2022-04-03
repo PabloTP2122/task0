@@ -1,4 +1,5 @@
-<svg width="8" height="7" viewBox="0 0 8 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="1.50804" height="7.57382" transform="matrix(0.74022 0.672365 -0.612643 0.79036 6.88379 0)" fill="white"/>
-<rect width="4.53683" height="1.5289" transform="matrix(0.74022 0.672365 -0.612643 0.79036 0.936768 2.7392)" fill="white"/>
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="8" cy="8" r="8" fill="#00E676"/>
+<rect width="1.50804" height="7.57382" transform="matrix(0.74022 0.672365 -0.612643 0.79036 10.8838 5)" fill="white"/>
+<rect width="4.53683" height="1.5289" transform="matrix(0.74022 0.672365 -0.612643 0.79036 4.93677 7.7392)" fill="white"/>
 </svg>

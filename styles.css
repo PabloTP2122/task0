@@ -68,7 +68,7 @@ header {
     /* overflow: hidden; */
 }
 
-picture img {
+.header-left picture img {
     min-width: 100px;
     width: 100%;
 }
@@ -89,15 +89,10 @@ picture img {
 
 .header-switch {
     width: 60px;
-    height: 34px;
-    grid-area: switch;
-}
-
-.header-switch {
+    height: 30px;
     position: relative;
     display: inline-block;
-    width: 60px;
-    height: 34px;
+    grid-area: switch;
 }
 
 .header-switch input {
@@ -117,9 +112,9 @@ picture img {
     right: 0;
     bottom: 0;
     background-color: var(--brand-color);
-    -webkit-transition: .4s;
-    transition: .4s;
-    box-shadow: 0 0 1px var(--font-color);
+    -webkit-transition: .3s;
+    transition: .3s;
+    /* box-shadow: 0 0 1px var(--font-color); */
 }
 
 .slider:before {
@@ -128,7 +123,7 @@ picture img {
     height: 26px;
     width: 26px;
     left: 4px;
-    bottom: 4px;
+    bottom: 2px;
     background-color: var(--brand-color);
     background-image: url(./assets/light-mode-icon.svg);
     background-repeat: no-repeat;
@@ -139,6 +134,7 @@ picture img {
 
 input:checked+.slider {
     background-color: var(--header-color);
+    box-shadow: 0 0 1px var(--font-color);
 }
 
 input:focus+.slider {
@@ -162,20 +158,11 @@ input:checked+.slider:before {
 }
 
 .slider.round:before {
-    border-radius: 50%;
-    box-shadow: 0 0 1px var(--font-color);
+    border-radius: 100%;
 }
 
 
 /*------ Tabs ------ */
-
-
-/* nav {
-    display: flex;
-    max-width: 900px;
-    min-width: 300px;
-    margin: 50px auto;
-} */
 
 .nav--tabs ul {
     list-style: none;
@@ -324,7 +311,7 @@ nav .indicator-rail {
     /* transform: translate(100px); */
 }
 
-main p {
+main p.parr {
     font-family: var(--font-family);
     font-size: 1.6rem;
     color: var(--font-color);
@@ -344,12 +331,6 @@ main p {
 
 
 /* ------ Section-activity ------ */
-
-
-/* .main--activity {
-    display: grid;
-    grid-template-rows: 1fr 4fr 1fr;
-} */
 
 .sections .pages {
     display: none;
@@ -396,45 +377,236 @@ h4 {
     color: var(--font-color);
 }
 
-.cards {
-    display: grid;
-    gap: 10px;
-    padding: 5px;
-}
 
-.card {
+/* ------ Main--activities ------ */
+
+
+/* Configuration 1 and 3 */
+
+.main--activity ul.activities-test3,
+.main--activity ul.activities-test1 {
     display: grid;
-    grid-template-columns: 1fr 2fr 3fr 1fr 2fr 3fr 1fr 2fr 3fr;
     width: 100%;
-    height: 54px;
-    border: 1px solid var(--header-border-color);
+    /* max-width: 900px;
+    min-width: 300px; */
+    text-decoration: none;
+    list-style: none;
+    grid-template-columns: 1fr 2fr 3fr 3fr 2fr 1fr 1fr 1fr 1fr 3fr;
+    grid-template-rows: min-content;
+    /* grid-template-areas: "icon1 pict-name description icon-topic space time"; */
+    grid-template-areas: "icon1 pict-name description icon-topic space verify download like rollback time";
+    margin: 0px auto;
+    font-family: var(--font-family);
+    color: var(--font-color);
+    font-size: 1.3rem;
+    font-weight: 400;
+    /* line-height: 1.6px; */
+    font-style: bold;
+    padding: 2px;
+    gap: 1px;
+    border: 1px solid var(--navcolor);
     border-radius: 6px;
 }
 
-.card-1 {
+
+/* General configuration */
+
+.main--activity ul.activities-test2,
+.main--activity ul.activities-test {
+    display: grid;
     width: 100%;
-    height: 54px;
+    /* max-width: 900px;
+    min-width: 300px; */
+    text-decoration: none;
+    list-style: none;
+    grid-template-columns: 1fr 2fr 3fr 3fr 4fr 3fr;
+    grid-template-rows: min-content;
+    grid-template-areas: "icon1 pict-name description icon-topic space time";
+    /* grid-template-areas: "icon1 pict-name description icon-topic space  verify download like rollback time"; */
+    margin: 0px auto;
+    font-family: var(--font-family);
+    color: var(--font-color);
+    font-size: 1.3rem;
+    font-weight: 400;
+    /* line-height: 1.6px; */
+    font-style: bold;
+    padding: 2px;
+    gap: 2px;
+    border: 1px solid var(--navcolor);
     border-radius: 6px;
 }
 
-.card-2 {
+.main--activity ul.activities-test3 li,
+.main--activity ul.activities-test1 li,
+.main--activity ul.activities-test2 li,
+.main--activity .activities-test li {
+    /* margin: 0 10px; */
     width: 100%;
     height: 54px;
+    background-color: var(--background-color);
+    /* border: 1px solid #e1bee7; */
+    text-decoration: none;
 }
 
-.card-3 {
-    width: 100%;
-    height: 54px;
+
+/* First activity */
+
+.activities-test3 li,
+.activities-test1 li,
+.activities-test2 li,
+.activities-test li {
+    place-content: center;
+    place-items: center;
 }
 
-.card-4 {
-    width: 100%;
-    height: 54px;
+.activities-test3 li .icon1,
+.activities-test1 li .icon1,
+.activities-test2 li .icon1,
+.activities-test li .icon1 {
+    grid-area: icon1;
 }
 
-.card-5 {
-    width: 100%;
-    height: 54px;
+.icon1 {
+    display: grid;
+}
+
+.icon--activity-task {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background-image: url(./assets/complete-icon.svg);
+}
+
+.activities-test3 li .name,
+.activities-test1 li .name,
+.activities-test2 li .name,
+.activities-test li .name {
+    grid-area: pict-name;
+}
+
+.activities-test1 li.main--activity-description,
+.activities-test2 li.main--activity-description,
+.activities-test li.main--activity-description {
+    grid-area: description;
+    place-content: center;
+}
+
+.main--activity-description {
+    display: grid;
+}
+
+.activities-test1 .icon--activity-topic,
+.icon--activity-topic {
+    width: 12px;
+    height: 16px;
+    display: inline-block;
+    -webkit-mask: url(./assets/achievement-icon.svg) no-repeat 50% 50%;
+    mask: url(./assets/achievement-icon.svg) no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+}
+
+.activities-test3 .icon--activity-topic,
+.activities-test2 .icon--activity-topic {
+    width: 12px;
+    height: 16px;
+    display: inline-block;
+    -webkit-mask: url(./assets/course-tab-icon.svg) no-repeat 50% 50%;
+    mask: url(./assets/course-tab-icon.svg) no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+}
+
+.topic a:hover {
+    color: var(--brand-color);
+    text-decoration: underline;
+}
+
+.activities-test3 li.topic,
+.activities-test1 li.topic,
+.activities-test2 li.topic,
+.activities-test li.topic {
+    grid-area: icon-topic;
+}
+
+.topic {
+    display: grid;
+}
+
+.activities-test3 li.verify {
+    grid-area: verify;
+}
+
+.activities-test3 li.download {
+    grid-area: download;
+}
+
+.activities-test3 li.like,
+.activities-test1 li.like {
+    grid-area: like;
+}
+
+.activities-test3 li.rollback,
+.activities-test1 li.rollback {
+    grid-area: rollback;
+}
+
+.activities-test3 li.right-time,
+.activities-test1 li.right-time,
+.activities-test2 li.right-time,
+.activities-test li.right-time {
+    grid-area: time;
+    /* padding: 5px; */
+    /* grid-template-columns: 1fr 3fr;
+    grid-template-rows: min-content; */
+}
+
+.right-time {
+    display: grid;
+}
+
+.name {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: min-content;
+    grid-template-areas: "imagename name";
+    gap: 5px;
+}
+
+.name-img img {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    grid-area: imagename;
+}
+
+picture.name-img {
+    place-self: center;
+}
+
+.name span {
+    grid-area: name;
+    place-self: center;
+}
+
+.activities-test3 .right-time,
+.activities-test2 .right-time,
+.activities-test1 .right-time,
+.activities-test .right-time {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: min-content;
+}
+
+.right-time p {
+    padding: 0px;
+}
+
+.icon--activity-date {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #0984E3;
 }
 
 
@@ -485,5 +657,29 @@ h4 {
         font-style: bold;
         padding: 8px;
         gap: 10px;
+    }
+    /* Activities */
+    .main--activity ul.activities-test {
+        display: grid;
+        width: 100%;
+        text-decoration: none;
+        list-style: none;
+        grid-template-columns: 1fr 2fr 3fr 3fr 4fr 2fr;
+        grid-template-rows: min-content;
+        grid-template-areas: "icon1 pict-name description icon-topic space time";
+        /* grid-template-areas: "icon1 pict-name description icon-topic space  verify download like rollback time"; */
+        place-content: center;
+        place-items: center;
+        margin: 0px auto;
+        font-family: var(--font-family);
+        color: var(--font-color);
+        font-size: 0.9rem;
+        font-weight: 400;
+        /* line-height: 1.6px; */
+        font-style: bold;
+        padding: 1px;
+        gap: 0px;
+        border: 1px solid var(--navcolor);
+        border-radius: 6px;
     }
 }
