@@ -340,22 +340,114 @@ main p.parr {
     display: grid;
 }
 
-.previous--button {
-    width: 189px;
+.next--button {
+    width: 109px;
     height: 34px;
+    display: grid;
+    grid-template-columns: 1fr;
     background-color: var(--brand-color);
     border: 1px solid var(--brand-color);
     border-radius: 6px;
     margin: 5px;
+    place-items: center;
+    place-content: center;
 }
 
-.previous--button a {
+.previous--button {
+    width: 109px;
+    height: 34px;
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: var(--brand-color);
+    border: 1px solid var(--brand-color);
+    border-radius: 6px;
+    margin: 5px;
+    place-items: center;
+    place-content: center;
+}
+
+.next--button a {
+    display: grid;
+    /* grid-template-rows: min-content; */
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "text-buttonNext arrowNext";
+    /* place-content: center;
+    place-self: center;
+    place-items: center; */
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 400;
+    gap: 10px;
     text-decoration: none;
     color: white;
 }
 
-.next--button {
-    width: 189px;
+.previous--button a {
+    display: grid;
+    /* grid-template-rows: min-content; */
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "arrow text-button";
+    place-content: center;
+    place-self: center;
+    place-items: center;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 400;
+    gap: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.next--button .icon a span {
+    grid-area: text-buttonNext;
+    place-self: center;
+}
+
+.previous--button .icon a span {
+    grid-area: text-button;
+    place-self: center;
+}
+
+i.next--button-icon {
+    grid-area: arrowNext;
+    place-self: center;
+}
+
+i.previous--button-icon {
+    grid-area: arrow;
+    place-self: center;
+}
+
+.next--button-icon {
+    width: 10px;
+    height: 6px;
+    display: inline-block;
+    -webkit-mask: url(./assets/next-button-arrow.svg) no-repeat 50% 50%;
+    mask: url(./assets/next-button-arrow.svg) no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+}
+
+.previous--button-icon {
+    width: 10px;
+    height: 6px;
+    display: inline-block;
+    -webkit-mask: url(./assets/previous-arrow.svg) no-repeat 50% 50%;
+    mask: url(./assets/previous-arrow.svg) no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+}
+
+.next--button .icon i.icon-color,
+.previous--button .icon i.icon-color {
+    background-color: white;
+}
+
+
+/* .next--button {
+    width: 109px;
     height: 34px;
     background-color: var(--brand-color);
     border: 1px solid var(--brand-color);
@@ -367,7 +459,7 @@ main p.parr {
 .next--button a {
     text-decoration: none;
     color: white;
-}
+} */
 
 h4 {
     font-family: var(--font-family);
@@ -391,7 +483,7 @@ h4 {
     min-width: 300px; */
     text-decoration: none;
     list-style: none;
-    grid-template-columns: 1fr 2fr 3fr 3fr 2fr 1fr 1fr 1fr 1fr 3fr;
+    grid-template-columns: max-content 2fr max-content max-content 2fr 1fr 1fr 1fr 1fr 3fr;
     grid-template-rows: min-content;
     /* grid-template-areas: "icon1 pict-name description icon-topic space time"; */
     grid-template-areas: "icon1 pict-name description icon-topic space verify download like rollback time";
@@ -403,7 +495,7 @@ h4 {
     /* line-height: 1.6px; */
     font-style: bold;
     padding: 2px;
-    gap: 1px;
+    gap: 10px;
     border: 1px solid var(--navcolor);
     border-radius: 6px;
 }
@@ -419,7 +511,7 @@ h4 {
     min-width: 300px; */
     text-decoration: none;
     list-style: none;
-    grid-template-columns: 1fr 2fr 3fr 3fr 4fr 3fr;
+    grid-template-columns: max-content 2fr max-content max-content 4fr 3fr;
     grid-template-rows: min-content;
     grid-template-areas: "icon1 pict-name description icon-topic space time";
     /* grid-template-areas: "icon1 pict-name description icon-topic space  verify download like rollback time"; */
@@ -431,7 +523,7 @@ h4 {
     /* line-height: 1.6px; */
     font-style: bold;
     padding: 2px;
-    gap: 2px;
+    gap: 10px;
     border: 1px solid var(--navcolor);
     border-radius: 6px;
 }
@@ -459,11 +551,13 @@ h4 {
     place-items: center;
 }
 
-.activities-test3 li .icon1,
-.activities-test1 li .icon1,
-.activities-test2 li .icon1,
-.activities-test li .icon1 {
+.activities-test3 li.icon1,
+.activities-test1 li.icon1,
+.activities-test2 li.icon1,
+.activities-test li.icon1 {
     grid-area: icon1;
+    padding-left: 21px;
+    margin-right: 10px;
 }
 
 .icon1 {
@@ -488,7 +582,7 @@ h4 {
 .activities-test2 li.main--activity-description,
 .activities-test li.main--activity-description {
     grid-area: description;
-    place-content: center;
+    justify-content: left;
 }
 
 .main--activity-description {
@@ -527,6 +621,7 @@ h4 {
 .activities-test2 li.topic,
 .activities-test li.topic {
     grid-area: icon-topic;
+    justify-content: left;
 }
 
 .topic {
@@ -567,7 +662,7 @@ h4 {
 
 .name {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: max-content 2fr;
     grid-template-rows: min-content;
     grid-template-areas: "imagename name";
     gap: 5px;
@@ -594,7 +689,7 @@ picture.name-img {
 .activities-test1 .right-time,
 .activities-test .right-time {
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: max-content 3fr;
     grid-template-rows: min-content;
 }
 
@@ -659,6 +754,32 @@ picture.name-img {
         gap: 10px;
     }
     /* Activities */
+    /* Configuration 1 and 3 */
+    .main--activity ul.activities-test3,
+    .main--activity ul.activities-test1 {
+        display: grid;
+        width: 100%;
+        /* max-width: 900px;
+    min-width: 300px; */
+        text-decoration: none;
+        list-style: none;
+        grid-template-columns: 1fr 2fr 3fr 3fr 2fr 1fr 1fr 1fr 1fr 3fr;
+        grid-template-rows: min-content;
+        /* grid-template-areas: "icon1 pict-name description icon-topic space time"; */
+        grid-template-areas: "icon1 pict-name description icon-topic space verify download like rollback time";
+        margin: 0px auto;
+        font-family: var(--font-family);
+        color: var(--font-color);
+        font-size: 0.9rem;
+        font-weight: 400;
+        /* line-height: 1.6px; */
+        font-style: bold;
+        padding: 2px;
+        gap: 1px;
+        border: 1px solid var(--navcolor);
+        border-radius: 6px;
+    }
+    .main--activity ul.activities-test2,
     .main--activity ul.activities-test {
         display: grid;
         width: 100%;
