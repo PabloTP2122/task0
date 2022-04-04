@@ -33,9 +33,6 @@ document.addEventListener('DOMContentLoaded', function(event) {
         // Sow first 3 elements
         listArray[i].style.display = 'block';
     }
-    /* if (currentPage == 1) {
-        previous.style.display = 'none';
-    } */
 
     /* For next button */
     next.addEventListener('click', () => {
@@ -73,8 +70,6 @@ document.addEventListener('DOMContentLoaded', function(event) {
             listArray[i].style.display = 'block';
         }
     });
-
-
 
     /* Selector size */
     let sizeIndicator = navigation.querySelector('li').offsetWidth;

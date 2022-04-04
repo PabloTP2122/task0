@@ -334,7 +334,7 @@ main p.parr {
 }
 
 
-/* ------ Section-activity ------ */
+/* ------ Activity section ------ */
 
 .pageActive {
     display: grid;
@@ -445,22 +445,6 @@ i.previous--button-icon {
     background-color: white;
 }
 
-
-/* .next--button {
-    width: 109px;
-    height: 34px;
-    background-color: var(--brand-color);
-    border: 1px solid var(--brand-color);
-    border-radius: 6px;
-    margin-top: 20px;
-    margin: 5px;
-}
-
-.next--button a {
-    text-decoration: none;
-    color: white;
-} */
-
 h4 {
     font-family: var(--font-family);
     font-size: 1.6rem;
@@ -470,7 +454,7 @@ h4 {
 }
 
 
-/* ------ Main--activities ------ */
+/* ------ Main activities ------ */
 
 .list {
     max-width: 900px;
@@ -478,7 +462,7 @@ h4 {
 }
 
 
-/* Configuration 1 and 3 */
+/* Configuration activities 1 and 3 */
 
 .main--activity ul.activities-test3,
 .main--activity ul.activities-test1 {
@@ -504,7 +488,7 @@ h4 {
 }
 
 
-/* General configuration */
+/* Configuration activities general and 2 */
 
 .main--activity ul.activities-test2,
 .main--activity ul.activities-test {
@@ -542,7 +526,7 @@ h4 {
 }
 
 
-/* First activity */
+/* ------ All activities styles ------ */
 
 .activities-test3 li,
 .activities-test1 li,
@@ -750,11 +734,6 @@ h4 {
     grid-template-rows: min-content; */
 }
 
-
-/* .right-time {
-    display: grid;
-} */
-
 li.name {
     display: grid;
     grid-template-columns: max-content max-content;
@@ -951,8 +930,6 @@ picture.name-img {
     .main--activity ul.activities-test1 {
         display: grid;
         width: 100%;
-        /* max-width: 900px;
-    min-width: 300px; */
         text-decoration: none;
         list-style: none;
         /* max-content max-content 1fr 0.5fr 0.5fr 0.3fr max-content max-content min-content 1fr */
@@ -965,7 +942,6 @@ picture.name-img {
         color: var(--font-color);
         font-size: 0.9rem;
         font-weight: 400;
-        /* line-height: 1.6px; */
         font-style: bold;
         padding: 2px;
         gap: 1px;
@@ -989,7 +965,6 @@ picture.name-img {
         color: var(--font-color);
         font-size: 0.9rem;
         font-weight: 400;
-        /* line-height: 1.6px; */
         font-style: bold;
         padding: 1px;
         gap: 0px;
