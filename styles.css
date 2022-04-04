@@ -472,6 +472,11 @@ h4 {
 
 /* ------ Main--activities ------ */
 
+.list {
+    max-width: 900px;
+    min-width: 300px;
+}
+
 
 /* Configuration 1 and 3 */
 
@@ -479,11 +484,9 @@ h4 {
 .main--activity ul.activities-test1 {
     display: grid;
     width: 100%;
-    /* max-width: 900px;
-    min-width: 300px; */
     text-decoration: none;
     list-style: none;
-    grid-template-columns: max-content max-content max-content max-content 2fr 1fr max-content max-content 1fr 2fr;
+    grid-template-columns: max-content max-content max-content max-content 1fr 1fr max-content max-content min-content 1fr;
     grid-template-rows: min-content;
     /* grid-template-areas: "icon1 pict-name description icon-topic space time"; */
     grid-template-areas: "icon1 pict-name description icon-topic space verify download like rollback time";
@@ -507,11 +510,9 @@ h4 {
 .main--activity ul.activities-test {
     display: grid;
     width: 100%;
-    /* max-width: 900px;
-    min-width: 300px; */
     text-decoration: none;
     list-style: none;
-    grid-template-columns: max-content max-content max-content max-content 4fr 3fr;
+    grid-template-columns: max-content max-content max-content max-content 4fr max-content;
     grid-template-rows: min-content;
     grid-template-areas: "icon1 pict-name description icon-topic space time";
     /* grid-template-areas: "icon1 pict-name description icon-topic space  verify download like rollback time"; */
@@ -633,6 +634,7 @@ h4 {
 .activities-test3 li.verify {
     display: grid;
     grid-area: verify;
+    justify-content: left;
 }
 
 .activities-test1 .icon--activity-verify,
@@ -663,6 +665,7 @@ h4 {
 .activities-test3 li.download {
     display: grid;
     grid-area: download;
+    justify-content: left;
 }
 
 .activities-test1 .icon--activity-download,
@@ -685,6 +688,7 @@ h4 {
     display: grid;
     grid-area: like;
     place-self: center;
+    justify-content: left;
 }
 
 .activities-test1 .icon--activity-like,
@@ -706,7 +710,7 @@ h4 {
 .activities-test1 li.rollback {
     grid-area: rollback;
     display: grid;
-    place-self: center;
+    justify-content: left;
 }
 
 .activities-test1 .icon--activity-rollback,
@@ -783,7 +787,7 @@ picture.name-img {
     display: grid;
     grid-template-columns: min-content max-content;
     grid-template-areas: "iconD date";
-    grid-template-rows: min-content;
+    grid-template-rows: repeat(2, min-content);
     gap: 5px;
 }
 
@@ -804,10 +808,7 @@ picture.name-img {
 /* ------ MediaQueries ------ */
 
 
-/* min display*/
-
-
-/* From 320 - 375 */
+/* From 320 - 475 */
 
 @media screen and (max-width: 475px) {
     .nav--tabs ul {
@@ -859,7 +860,7 @@ picture.name-img {
     min-width: 300px; */
         text-decoration: none;
         list-style: none;
-        grid-template-columns: 1fr 2fr 3fr 3fr 2fr 1fr 1fr 1fr 1fr 3fr;
+        grid-template-columns: repeat(10, min-content);
         grid-template-rows: min-content;
         /* grid-template-areas: "icon1 pict-name description icon-topic space time"; */
         grid-template-areas: "icon1 pict-name description icon-topic space verify download like rollback time";
@@ -881,7 +882,103 @@ picture.name-img {
         width: 100%;
         text-decoration: none;
         list-style: none;
-        grid-template-columns: 1fr 2fr 3fr 3fr 4fr 2fr;
+        grid-template-columns: max-content max-content 0.5fr max-content max-content 2fr;
+        grid-template-rows: min-content;
+        grid-template-areas: "icon1 pict-name description icon-topic space time";
+        /* grid-template-areas: "icon1 pict-name description icon-topic space  verify download like rollback time"; */
+        place-content: center;
+        place-items: center;
+        margin: 0px auto;
+        font-family: var(--font-family);
+        color: var(--font-color);
+        font-size: 0.9rem;
+        font-weight: 400;
+        /* line-height: 1.6px; */
+        font-style: bold;
+        padding: 1px;
+        gap: 0px;
+        border: 1px solid var(--navcolor);
+        border-radius: 6px;
+    }
+}
+
+
+/* From 475 - 768px */
+
+@media screen and (max-width:768px) {
+    .nav--tabs ul {
+        list-style: none;
+        padding: 15px;
+        margin-top: 60px;
+        display: grid;
+        grid-template-columns: repeat(3, min-content);
+        align-items: center;
+        gap: 25px;
+        /* border: 5px solid #e1bee7; */
+        background-color: var(--background-color);
+    }
+    .nav--tabs ul li a {
+        display: grid;
+        grid-template-rows: min-content;
+        grid-template-areas: "image text-tab";
+        place-content: center;
+        text-decoration: none;
+        font-family: var(--font-family);
+        color: var(--font-tabs-color);
+        font-size: 0.9rem;
+        font-weight: 700;
+        font-style: bold;
+        padding: 8px;
+        gap: 10px;
+    }
+    .nav--tabs ul li a:hover {
+        display: grid;
+        grid-template-rows: min-content;
+        grid-template-areas: "image text-tab";
+        place-content: center;
+        text-decoration: none;
+        font-family: var(--font-family);
+        color: var(--brand-color);
+        font-size: 0.9rem;
+        font-weight: 700;
+        font-style: bold;
+        padding: 8px;
+        gap: 10px;
+    }
+    /* Activities */
+    /* Configuration 1 and 3 */
+    .main--activity ul.activities-test3,
+    .main--activity ul.activities-test1 {
+        display: grid;
+        width: 100%;
+        /* max-width: 900px;
+    min-width: 300px; */
+        text-decoration: none;
+        list-style: none;
+        /* max-content max-content 1fr 0.5fr 0.5fr 0.3fr max-content max-content min-content 1fr */
+        grid-template-columns: repeat(10, min-content);
+        grid-template-rows: min-content;
+        /* grid-template-areas: "icon1 pict-name description icon-topic space time"; */
+        grid-template-areas: "icon1 pict-name description icon-topic space verify download like rollback time";
+        margin: 0px auto;
+        font-family: var(--font-family);
+        color: var(--font-color);
+        font-size: 0.9rem;
+        font-weight: 400;
+        /* line-height: 1.6px; */
+        font-style: bold;
+        padding: 2px;
+        gap: 1px;
+        border: 1px solid var(--navcolor);
+        border-radius: 6px;
+    }
+    .main--activity ul.activities-test2,
+    .main--activity ul.activities-test {
+        display: grid;
+        width: 100%;
+        text-decoration: none;
+        list-style: none;
+        grid-template-columns: max-content max-content 0.5fr max-content max-content 2fr;
         grid-template-rows: min-content;
         grid-template-areas: "icon1 pict-name description icon-topic space time";
         /* grid-template-areas: "icon1 pict-name description icon-topic space  verify download like rollback time"; */

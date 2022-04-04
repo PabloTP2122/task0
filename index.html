@@ -18,12 +18,15 @@
 <body>
     <header>
         <div class="header--container">
+            <!-- Left section brand logo -->
             <div class="header-left">
                 <picture><img src="./assets/wooninjas-logotype.svg" alt="wooninjas logo"></picture>
             </div>
+            <!-- Right section activity timeline -->
             <div class="header-right">
                 <label>Activity Timeline </label>
             </div>
+            <!-- Switch theme-mode section -->
             <label class="header-switch">
                 <input type="checkbox" onclick="toggleThemeMode()">
                 <span class="slider round"></span>
@@ -31,20 +34,18 @@
         </div>
     </header>
     <main>
-        <!-- Tabs -->
+        <!-- Tabs navigation -->
         <nav class="nav--tabs" id="navigation">
             <ul>
+                <!-- Course -->
                 <li>
                     <!-- using html data -->
                     <a class="icon" data-target="#course">
                         <i class="icon--course icon-color"></i>
-                        <!-- the icon -->
                         <span>Course</span>
-                        <!-- the text -->
                     </a>
-
-
                 </li>
+                <!-- Materials -->
                 <li>
                     <a class="icon" data-target="#materials">
                         <i class="icon--materials icon-color"></i>
@@ -54,6 +55,7 @@
                     </a>
 
                 </li>
+                <!-- Activity -->
                 <li>
                     <a class="icon" data-target="#activity">
                         <i class="icon--activity icon-color"></i>
@@ -63,11 +65,11 @@
                     </a>
                 </li>
             </ul>
+            <!-- Position indicator -->
             <span class="indicator-rail" id="indicator-rail"><span class="indicator" id="indicator"></span></span>
-
-
         </nav>
-        <!-- class="sections main--course" -->
+        <!-- ------------------------ Section tabs ---------------------------- -->
+        <!-- Course section -->
         <section class="sections main--course active" data-content id="course">
             <p class="parr">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
@@ -75,6 +77,7 @@
                 desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
             </p>
         </section>
+        <!-- Materials section -->
         <section class="sections main--materials" data-content id="materials">
             <p class="parr">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
@@ -82,14 +85,19 @@
                 desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
             </p>
         </section>
+        <!-- Activity section -->
         <section class="sections main--activity" data-content id="activity">
+            <!-- Previous button -->
             <button class="previous--button">
                 <a class="icon">
                     <i class="previous--button-icon icon-color"></i>
                     <span>Previous</span>
                 </a>
             </button>
+            <!-- If API is used dynamic ul -->
             <!-- <ul class="activities"></ul> -->
+
+            <!-- All nine pages  -->
             <div class="list list-1">
                 <h4>September 2, 2021</h4>
                 <ul class="activities-test1">
@@ -184,7 +192,7 @@
                     <li class="right-time">
                         <i class="icon--activity-date"></i>
                         <!-- Description -->
-                        <p>10 minutes ago</p>
+                        <p>45 minutes ago</p>
                     </li>
                 </ul>
                 <ul class="activities-test">
@@ -211,7 +219,7 @@
                     <li class="right-time">
                         <i class="icon--activity-date"></i>
                         <!-- Description -->
-                        <p>10 minutes ago</p>
+                        <p>2 hours ago</p>
                     </li>
                 </ul>
                 <ul class="activities-test">
@@ -238,7 +246,7 @@
                     <li class="right-time">
                         <i class="icon--activity-date"></i>
                         <!-- Description -->
-                        <p>10 minutes ago</p>
+                        <p>3 hours ago</p>
                     </li>
                 </ul>
 
@@ -1213,7 +1221,7 @@
                     </li>
                 </ul>
             </div>
-
+            <!-- Next button -->
             <button class="next--button">
                 <a class="icon">
                     <i class="next--button-icon icon-color"></i>
