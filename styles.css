@@ -238,7 +238,11 @@ input:checked+.slider:before {
 
 /* Icon colors */
 
-.icon:hover>i {
+.verify .icon:hover>i,
+.download .icon:hover>i,
+.like .icon:hover>i,
+.rollback .icon:hover>i,
+.nav--tabs .icon:hover>i {
     background-color: var(--brand-color);
     display: inline-block;
 }
@@ -331,10 +335,6 @@ main p.parr {
 
 
 /* ------ Section-activity ------ */
-
-.sections .pages {
-    display: none;
-}
 
 .pageActive {
     display: grid;
@@ -483,7 +483,7 @@ h4 {
     min-width: 300px; */
     text-decoration: none;
     list-style: none;
-    grid-template-columns: max-content 2fr max-content max-content 2fr 1fr 1fr 1fr 1fr 3fr;
+    grid-template-columns: max-content max-content max-content max-content 2fr 1fr max-content max-content 1fr 2fr;
     grid-template-rows: min-content;
     /* grid-template-areas: "icon1 pict-name description icon-topic space time"; */
     grid-template-areas: "icon1 pict-name description icon-topic space verify download like rollback time";
@@ -511,7 +511,7 @@ h4 {
     min-width: 300px; */
     text-decoration: none;
     list-style: none;
-    grid-template-columns: max-content 2fr max-content max-content 4fr 3fr;
+    grid-template-columns: max-content max-content max-content max-content 4fr 3fr;
     grid-template-rows: min-content;
     grid-template-areas: "icon1 pict-name description icon-topic space time";
     /* grid-template-areas: "icon1 pict-name description icon-topic space  verify download like rollback time"; */
@@ -549,6 +549,7 @@ h4 {
 .activities-test li {
     place-content: center;
     place-items: center;
+    place-self: center;
 }
 
 .activities-test3 li.icon1,
@@ -589,8 +590,7 @@ h4 {
     display: grid;
 }
 
-.activities-test1 .icon--activity-topic,
-.icon--activity-topic {
+.activities-test1 .icon--activity-topic {
     width: 12px;
     height: 16px;
     display: inline-block;
@@ -601,7 +601,8 @@ h4 {
 }
 
 .activities-test3 .icon--activity-topic,
-.activities-test2 .icon--activity-topic {
+.activities-test2 .icon--activity-topic,
+.activities-test .icon--activity-topic {
     width: 12px;
     height: 16px;
     display: inline-block;
@@ -611,7 +612,7 @@ h4 {
     mask-size: cover;
 }
 
-.topic a:hover {
+.topic span:hover {
     color: var(--brand-color);
     text-decoration: underline;
 }
@@ -620,52 +621,143 @@ h4 {
 .activities-test1 li.topic,
 .activities-test2 li.topic,
 .activities-test li.topic {
+    display: grid;
     grid-area: icon-topic;
     justify-content: left;
 }
 
-.topic {
-    display: grid;
+.topic span {
+    color: var(--brand-color);
 }
 
 .activities-test3 li.verify {
+    display: grid;
     grid-area: verify;
 }
 
+.activities-test1 .icon--activity-verify,
+.activities-test3 .icon--activity-verify {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    -webkit-mask: url(./assets/certificate-verification-icon.svg) no-repeat 50% 50%;
+    mask: url(./assets/certificate-verification-icon.svg) no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+}
+
+.activities-test3 .verify,
+.activities-test2 .verify,
+.activities-test1 .verify,
+.activities-test .verify {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    grid-template-rows: min-content;
+    gap: 5px;
+}
+
+.verify a:hover {
+    color: var(--brand-color);
+}
+
 .activities-test3 li.download {
+    display: grid;
     grid-area: download;
+}
+
+.activities-test1 .icon--activity-download,
+.activities-test3 .icon--activity-download {
+    width: 15px;
+    height: 16px;
+    display: inline-block;
+    -webkit-mask: url(./assets/pdf-document-icon.svg) no-repeat 50% 50%;
+    mask: url(./assets/pdf-document-icon.svg) no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+}
+
+.download a:hover {
+    color: var(--brand-color);
 }
 
 .activities-test3 li.like,
 .activities-test1 li.like {
+    display: grid;
     grid-area: like;
+    place-self: center;
+}
+
+.activities-test1 .icon--activity-like,
+.activities-test3 .icon--activity-like {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    -webkit-mask: url(./assets/like-icon.svg) no-repeat 50% 50%;
+    mask: url(./assets/like-icon.svg) no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+}
+
+.like a:hover {
+    color: var(--brand-color);
 }
 
 .activities-test3 li.rollback,
 .activities-test1 li.rollback {
     grid-area: rollback;
+    display: grid;
+    place-self: center;
+}
+
+.activities-test1 .icon--activity-rollback,
+.activities-test3 .icon--activity-rollback {
+    width: 18px;
+    height: 16px;
+    display: inline-block;
+    -webkit-mask: url(./assets/rollback-icon.svg) no-repeat 50% 50%;
+    mask: url(./assets/rollback-icon.svg) no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+}
+
+.rollback a:hover {
+    color: var(--brand-color);
+}
+
+.activities-test3 .rollback,
+.activities-test2 .rollback,
+.activities-test1 .rollback,
+.activities-test .rollback {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    grid-template-rows: min-content;
+    gap: 5px;
 }
 
 .activities-test3 li.right-time,
 .activities-test1 li.right-time,
 .activities-test2 li.right-time,
 .activities-test li.right-time {
+    display: grid;
     grid-area: time;
-    /* padding: 5px; */
+    justify-content: right;
+    padding-right: 20px;
     /* grid-template-columns: 1fr 3fr;
     grid-template-rows: min-content; */
 }
 
-.right-time {
-    display: grid;
-}
 
-.name {
+/* .right-time {
     display: grid;
-    grid-template-columns: max-content 2fr;
+} */
+
+li.name {
+    display: grid;
+    grid-template-columns: max-content max-content;
     grid-template-rows: min-content;
     grid-template-areas: "imagename name";
     gap: 5px;
+    justify-content: left;
 }
 
 .name-img img {
@@ -689,12 +781,10 @@ picture.name-img {
 .activities-test1 .right-time,
 .activities-test .right-time {
     display: grid;
-    grid-template-columns: max-content 3fr;
+    grid-template-columns: min-content max-content;
+    grid-template-areas: "iconD date";
     grid-template-rows: min-content;
-}
-
-.right-time p {
-    padding: 0px;
+    gap: 5px;
 }
 
 .icon--activity-date {
@@ -702,6 +792,12 @@ picture.name-img {
     height: 8px;
     border-radius: 50%;
     background-color: #0984E3;
+    grid-area: iconD;
+}
+
+.right-time p {
+    padding: 0px;
+    grid-area: date;
 }
 
 
